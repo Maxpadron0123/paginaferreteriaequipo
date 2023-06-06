@@ -1,0 +1,124 @@
+<!doctype html>
+<html>    
+<head>
+    <style>
+        body {
+          background-color: rgb(139, 139, 121);
+        }
+     </style>
+        
+    <title>CATEGORÍAS</title>
+    <link rel="stylesheet" type="text/CSS" href="Estilo.CSS">
+ </head>    
+ <body>
+    <h1>CATEGORÍAS</h1>
+ </body>
+    <nav>
+         <ul>
+         <li><a href="Ferreteria.html">PAGINA PRINCIPAL</a></li>
+         <li><a href="VER DETALLES.html">VER DETALLES</a></li>
+         <li><a href="">CATEGORÍAS</a></li>
+         <li><a href="METODOS DE PAGO.html">METODOS DE PAGO</a></li>
+    </ul>
+    </nav>                       
+
+    <br>
+      <h2 style="color:rgb(20, 219, 233);">CONSTRUCCIÓN:</h2>
+	  <br>
+	  <title>Imágenes en HTML</title>
+	  <body>
+		  <img src="C:\TRABAJO EN EQUIPO\IMAGENES USADAS\images.jpg" alt="Imagen 1">
+		  <img src="C:\TRABAJO EN EQUIPO\IMAGENES USADAS\descarga (6).jpg" alt="Imagen 2">
+		  <img src="C:\TRABAJO EN EQUIPO\IMAGENES USADAS\descarga (8).jpg" alt="Imagen 3">
+		  <img src="C:\TRABAJO EN EQUIPO\IMAGENES USADAS\descarga (7).jpg" alt="Imagen 4">
+		  <img src="C:\TRABAJO EN EQUIPO\IMAGENES USADAS\escalera.jpeg" alt="Imagen 5">
+		  <h2><font color="white">Martillo $186.00<font color="sky blue">-------<font color="white"> Pala Cuadrada $340<font color="sky blue">------<font color="white">Tornillos $155<font color="sky blue">------<font color="white">Cemento Cemex  $312<font color="sky blue">---<font color="white">Escalera Plegable $639</font></h2>
+		<br></br>
+		<br></br>
+		<h2 style="color:rgb(20, 219, 233);">ELECTRICIDAD:</h2>
+		<img src="C:\TRABAJO EN EQUIPO\descarga.jpg" alt="Imagen 6">
+		<img src="C:\TRABAJO EN EQUIPO\descarga (1).jpg" alt="Imagen 7">
+		  <img src="C:\TRABAJO EN EQUIPO\descarga (3).jpg" alt="Imagen 8">
+		  <img src="C:\TRABAJO EN EQUIPO\IMAGENES USADAS\descarga (9).jpg" alt="Imagen 9">
+		  <img src="C:\TRABAJO EN EQUIPO\IMAGENES USADAS\descarga (10).jpg" alt="Imagen 10">
+		  <h2><font color="black">Foco Philips $50<font color="grench">--------<font color="black">Mini Split $7,899<font color="grench">--------<font color="black">Clavija Blindada $50<font color="grench">--<font color="black">Rollos de Cables $409<font color="grench">---<font color="black">Panel Solar $4999</font></h2>
+	  <br></br>
+	  <br></br>
+	  <h2>PLOMERÍA:</h2>
+		<img src="C:\TRABAJO EN EQUIPO\IMAGENES USADAS\s-l225.jpg" alt="Imagen 11">
+		<img src="C:\TRABAJO EN EQUIPO\IMAGENES USADAS\pistolariego.avif" alt="Imagen 12">
+		  <img src="C:\TRABAJO EN EQUIPO\IMAGENES USADAS\descarga.jpeg" alt="Imagen 13">
+		  <img src="C:\TRABAJO EN EQUIPO\IMAGENES USADAS\tinaco-rotoplas.jpg" alt="Imagen 14">
+		  <img src="C:\TRABAJO EN EQUIPO\IMAGENES USADAS\Cámara-inspección-de-chemineas-y-pozos.jpg" alt="Imagen 15">
+		  <h2><font color="white">Maq-Limpieza $17467<font color="grench">--<font color="white">Pistola de Riego $234<font color="grench">-----<font color="white">Válvula $65<font color="grench">-------<font color="white">Tinaco Rotoplas $3099<font color="grench">--<font color="white">Cámara-Inspección $1836</font></h2>
+		   <br><br>
+
+	  <h1 style="color:rgb(20, 219, 233);">TOTAL A PAGAR</h1><br>
+	  <body>
+		  <h2 style="color:rgb(247, 247, 247);">Ingrese el nombre y precio de los productos:</h2>
+		  
+		  <h2 style="color:rgb(247, 247, 247);"><label for="nombre">Nombre del Producto:</label></h2>
+		  <input type="text" id="nombre">
+		  
+		  <h2 style="color:rgb(247, 247, 247);"><label for="precio">Precio:</label></h2>
+		  <input type="number" id="precio" step="0.01">
+		  
+		  <button onclick="agregarProducto()">Agregar Producto</button>
+		  <button onclick="borrarTodo()">Borrar Todo</button>
+		  <button onclick="calcularTotal()">Calcular Total</button>
+		  
+		  <h2 style="color:rgb(247, 247, 247);">Lista de Productos:</h2>
+		  <ul id="listaProductos">
+			  
+		  </ul>
+		  
+		  <h2 style="color:rgb(247, 247, 247);">Total a Pagar:</h2>
+		  <p id="total"></p>
+		  
+		  <script>
+			  var productos = [];
+			  
+			  function agregarProducto() {
+				  var nombre = document.getElementById("nombre").value;
+				  var precio = document.getElementById("precio").value;
+				  
+				  var producto = {
+					  nombre: nombre,
+					  precio: precio
+				  };
+				  
+				  productos.push(producto);
+				  
+				  actualizarLista();
+			  }
+			  
+			  function actualizarLista() {
+				  var listaProductos = document.getElementById("listaProductos");
+				  listaProductos.innerHTML = "";
+				  
+				  for (var i = 0; i < productos.length; i++) {
+					  var li = document.createElement("li");
+					  li.innerHTML = productos[i].nombre + ": $" + productos[i].precio;
+					  listaProductos.appendChild(li);
+				  }
+			  }
+			  
+			  function borrarTodo() {
+				  productos = [];
+				  actualizarLista();
+				  document.getElementById("total").innerHTML = "";
+			  }
+			  
+			  function calcularTotal() {
+				  var total = 0;
+				  
+				  for (var i = 0; i < productos.length; i++) {
+					  total += parseFloat(productos[i].precio);
+				  }
+				  
+				  document.getElementById("total").innerHTML = "$" + total.toFixed(2);
+			  }
+		  </script>
+		  <br>
+    </body>  
+</html>  

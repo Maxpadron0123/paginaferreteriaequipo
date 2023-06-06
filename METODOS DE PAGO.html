@@ -1,0 +1,91 @@
+<!doctype html>
+<html>    
+<head>
+    <style>
+        body {
+          background-color: rgb(139, 139, 121);
+        }
+     </style>
+        
+    <title>METODOS DE PAGO</title>
+	<link rel="stylesheet" type="text/CSS" href="ESTILO.css">
+	<link rel="stylesheet" type="text/CSS" href="Pago.css">
+ </head>    
+ <body>
+    <h1>METODOS DE PAGO</h1>
+ </body>
+    <nav>
+         <ul>
+         <li><a href="Ferreteria.html">PAGINA PRINCIPAL</a></li>
+         <li><a href="VER DETALLES.html">VER DETALLES</a></li>
+         <li><a href="CATEGORIAS.html">CATEGORIAS</a></li>
+         <li><a href="">METODOS DE PAGO</a></li>
+    </ul>
+    </nav>
+
+	<form>
+	     <h1>Forma de pago</h1>
+		 <section>
+			<h2>Información de contacto</h2>
+			  <h2 label for="name">
+				<left span>Nombre:</span>
+				<strong><abbr title="required">*</abbr></strong>
+			  </h2 label>
+			  <input type="text" id="name" name="username">
+			</p>
+			  <h2 label for="mail">
+				<left Span>Correo electrónico:</span>
+				<strong><abbr title="required">*</abbr></strong>
+			  </h2 label>
+			  <input type="email" id="mail" name="usermail">
+			</p>
+			<p>
+				<h2 label for="Enviar">
+					<left Span>Direccion de envio:</span>
+					<strong><abbr title="required">*</abbr></strong>
+				  </h2 label>
+				  <input type="address" id="Direccion" name="address">
+				</p>
+				<p>
+			  <h2 label for="pwd">
+				<left span>Contraseña:</span>
+				<strong><abbr title="required">*</abbr></strong>
+			  </h2 label>
+			  <input type="password" id="pwd" name="password">
+			</p><br>
+		</section>
+
+		<section>
+			<h2>Información de pago</h2>
+			<p>
+			  <label for="card">
+				<left span>Tipo de tarjeta:</span>
+			  </label>
+			  <select id="card" name="usercard">
+				<option value="visa">Visa</option>
+				<option value="dp">Deposito</option>
+				<option value="trf">Tranferencia</option>
+			  </select>
+			</p>
+			<p>
+			  <label for="number">
+				<left span>Número de tarjeta:</span>
+				<strong><abbr title="required">*</abbr></strong>
+			  </label>
+			  <input type="tel" id="number" name="cardnumber">
+			</p>
+			<p>
+			  <label for="date">
+				<left span>Fecha de caducidad:</span>
+				<strong><abbr title="required">*</abbr></strong>
+				<em>el formato mm/aa</em>
+			  </label>
+			  <input type="date" id="date" name="expiration">
+			</p>
+		</section>
+
+		<p> <left><button type="submit">VALIDAR EL PAGO</button></left </p>
+	 </form>
+
+</body>
+</html>
